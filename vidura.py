@@ -34,7 +34,7 @@ def index():
                 <div class="input-container">
                     <input type="url" name="url" id="url-input" placeholder="Paste video URL here" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l-4 4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
                 </div>
                 <button type="submit" id="download-btn" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition font-semibold">Download Now</button>
@@ -102,7 +102,7 @@ def download():
         'merge_output_format': 'mp4',
         'noplaylist': True,
         'quiet': True,
-        'format': 'bestvideo+bestaudio/best',
+        'format': 'bestvideo[filesize<50M]+bestaudio/best[filesize<50M]',
     }
     filename = None
     try:
