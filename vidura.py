@@ -99,10 +99,9 @@ def download():
     url = request.form['url']
     ydl_opts = {
         'outtmpl': 'downloads/%(title)s.%(ext)s',
-        'merge_output_format': 'mp4',
         'noplaylist': True,
         'quiet': True,
-        'format': 'bestvideo[filesize<50M]+bestaudio/best[filesize<50M]',
+        'format': 'best[filesize<50M]',  # Use best single stream, no merging
     }
     filename = None
     try:
